@@ -23,6 +23,11 @@ async fn echo(req_body: String) -> impl Responder {
     HttpResponse::Ok().body(req_body)
 }
 
+#[get("verify-signature")]                       // This get request should pass in the signature, hash and parameters in the URL
+async fn verify_signature() -> impl Responder {  // Should return a boolean
+    HttpResponse::Ok().body("Hello world!")
+}
+
 async fn manual_hello() -> impl Responder {
     HttpResponse::Ok().body("Hey there!")
 }
